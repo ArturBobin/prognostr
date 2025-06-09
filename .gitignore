@@ -12,7 +12,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Файлы IDE (примеры для VSCode и PyCharm)
+# Файлы IDE
 .vscode/
 .idea/
 
