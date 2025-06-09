@@ -1,0 +1,39 @@
+{
+    "model_name": "T_h14_diff_20250610_015113",
+    "prediction_horizon": 14,
+    "time_steps": 30,
+    "features_input": [
+        "Close",
+        "Volume",
+        "SMA_20",
+        "SMA_50",
+        "BB_Middle_20",
+        "BB_Upper_20",
+        "BB_Lower_20",
+        "RSI_14"
+    ],
+    "target_feature_model": "Close_diff1",
+    "target_feature_original": "Close",
+    "used_differencing": true,
+    "differencing_column": "Close",
+    "differencing_order": 1,
+    "loss_function": "custom_weighted_mse",
+    "loss_weight_base": 1.15,
+    "training_epochs_run": 5,
+    "test_split_ratio_used": 0.2,
+    "early_stopping_monitor_config": "val_loss",
+    "early_stopping_monitor_actual": "loss",
+    "metrics_on_test_absolute_prices": {
+        "mae_avg": NaN,
+        "rmse_avg": NaN,
+        "mape_avg_custom": NaN,
+        "mae_last": NaN,
+        "rmse_last": NaN,
+        "mape_last_custom": NaN,
+        "keras_val_loss_target": NaN,
+        "keras_val_mae_target": NaN,
+        "keras_val_mape_target": NaN,
+        "keras_val_mae_last_step_target": NaN,
+        "keras_val_mape_last_step_target": NaN
+    }
+}

@@ -1,0 +1,230 @@
+/* styles.qss */
+
+/* --- Общие стили --- */
+QMainWindow, QDialog, QWidget {
+    background-color: #1E1E1E;
+    color: #EAEAEA;
+    font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-size: 10pt;
+    border: none; /* Убираем границы по умолчанию */
+}
+
+/* --- Вкладки --- */
+QTabWidget::pane { /* Область содержимого вкладки */
+    border-top: 1px solid #4A4A4A;
+    background-color: #252526; /* Немного светлее основного фона */
+}
+
+QTabBar::tab { /* Сами ярлычки вкладок */
+    background: #2D2D2D;
+    color: #AAAAAA;
+    border: 1px solid #4A4A4A;
+    border-bottom: none; /* Убираем нижнюю границу */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 8px 15px;
+    margin-right: 2px; /* Небольшой отступ между вкладками */
+}
+
+QTabBar::tab:selected { /* Активная вкладка */
+    background: #252526; /* Цвет фона содержимого */
+    color: #EAEAEA;
+    border-color: #4A4A4A;
+}
+
+QTabBar::tab:!selected:hover { /* Неактивная вкладка при наведении */
+    background: #3E3E42;
+    color: #CCCCCC;
+}
+
+/* --- Группы виджетов (GroupBox) --- */
+QGroupBox {
+    background-color: #2D2D2D;
+    border: 1px solid #4A4A4A;
+    border-radius: 5px;
+    margin-top: 1ex; /* Отступ сверху для заголовка */
+    padding: 10px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* Позиция заголовка */
+    padding: 0 5px;
+    color: #00AEEF; /* Акцентный цвет для заголовков групп */
+    font-weight: bold;
+    margin-left: 10px; /* Отступ слева для заголовка */
+}
+
+
+/* --- Элементы ввода --- */
+QLineEdit, QSpinBox, QDoubleSpinBox, QDateEdit {
+    background-color: #3C3C3C;
+    border: 1px solid #5A5A5A;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #EAEAEA;
+    min-height: 25px;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QDateEdit:focus {
+    border: 1px solid #007ACC;
+    background-color: #454545;
+}
+
+QDateEdit::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left-width: 1px;
+    border-left-color: #5A5A5A;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+QDateEdit::down-arrow {
+    image: url(placeholder_for_arrow.png); /* Нужно добавить иконку */
+}
+
+/* --- Кнопки --- */
+QPushButton {
+    background-color: #007ACC;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    font-size: 10pt; /* Сделаем чуть меньше для компактности */
+    font-weight: bold;
+    min-height: 28px;
+    min-width: 80px;
+    /* --- Анимация фона (Простая) --- */
+    /* transition: background-color 0.2s ease-in-out; Не поддерживается QSS */
+}
+
+QPushButton:hover {
+    background-color: #0095ff;
+}
+
+QPushButton:pressed {
+    background-color: #005c9e;
+}
+
+QPushButton:disabled {
+    background-color: #4A4A4A;
+    color: #888888;
+}
+
+/* --- Радио-кнопки и Чекбоксы --- */
+QRadioButton::indicator, QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QRadioButton::indicator::unchecked, QCheckBox::indicator::unchecked {
+    border: 1px solid #888888;
+    background-color: #3C3C3C;
+    border-radius: 8px; /* Для круглых радио-кнопок */
+}
+QCheckBox::indicator::unchecked {
+     border-radius: 3px; /* Для квадратных чекбоксов */
+}
+
+QRadioButton::indicator:checked, QCheckBox::indicator:checked {
+    border: 1px solid #007ACC;
+    background-color: #007ACC;
+    image: url(placeholder_for_checkmark.png); /* Иконка галочки */
+    border-radius: 8px;
+}
+QCheckBox::indicator:checked {
+    border-radius: 3px;
+}
+
+
+/* --- Прогресс-бар --- */
+QProgressBar {
+    border: 1px solid #4A4A4A;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #3C3C3C;
+    color: #EAEAEA;
+    height: 20px;
+}
+
+QProgressBar::chunk {
+    background-color: QLinearGradient( x1: 0, y1: 0, x2: 1, y2: 0,
+                                      stop: 0 #007ACC, stop: 1 #00AEEF);
+    border-radius: 4px;
+    /* Анимация (эффект движения) сложно сделать в QSS, лучше QPropertyAnimation */
+}
+
+/* --- Текстовое поле (Логи) --- */
+QTextEdit {
+    background-color: #252526;
+    border: 1px solid #4A4A4A;
+    border-radius: 4px;
+    color: #CCCCCC;
+    font-family: "Consolas", "Monaco", "Menlo", monospace; /* Моноширинный шрифт для логов */
+    font-size: 9pt;
+}
+
+/* --- Выпадающий список --- */
+QComboBox {
+    background-color: #3C3C3C;
+    border: 1px solid #5A5A5A;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #EAEAEA;
+    min-height: 25px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left-width: 1px;
+    border-left-color: #5A5A5A;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+QComboBox::down-arrow {
+     image: url(placeholder_for_arrow.png); /* Иконка стрелки */
+}
+
+QComboBox QAbstractItemView { /* Выпадающий список */
+    background-color: #2D2D2D;
+    border: 1px solid #5A5A5A;
+    selection-background-color: #007ACC;
+    color: #EAEAEA;
+    padding: 2px;
+}
+
+/* --- Стили для конкретных виджетов по objectName --- */
+QLabel#StatusLabel {
+    font-size: 9pt;
+    color: #AAAAAA;
+    padding-top: 5px;
+    min-height: 20px;
+}
+
+QLabel#ErrorLabel { /* Специальный стиль для ошибок */
+    font-size: 9pt;
+    color: #E74C3C; /* Красный */
+    font-weight: bold;
+    padding-top: 5px;
+    min-height: 20px;
+}
+
+QLabel#PredictionLabel {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #00AEEF; /* Акцентный цвет для прогноза */
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* --- Веб-представление для Plotly --- */
+QWebEngineView {
+    border: 1px solid #4A4A4A;
+    border-radius: 4px;
+}

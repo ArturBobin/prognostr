@@ -1,0 +1,38 @@
+stock_predictor_project/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+│
+├── app/
+│   ├── __init__.py
+│   ├── ui/
+│   │   ├── __init__.py
+│   │   ├── main_window.py
+│   │   ├── training_tab.py
+│   │   ├── prediction_tab.py
+│   │   ├── components/
+│   │   │   └── mpl_canvas.py
+│   │   └── styles.qss
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── data_loader.py
+│   │   ├── preprocessor.py
+│   │   ├── model_builder.py
+│   │   ├── trainer.py
+│   │   ├── predictor.py
+│   │   └── workers.py
+│   ├── plotting/
+│   │   ├── __init__.py
+│   │   └── plot_generator.py
+│   └── utils/
+│       ├── __init__.py
+│       └── config.py
+│
+├── assets/
+│   ├── models/
+│   │   └── # Сохранённые модели
+│   └── data/
+│       └── # Сохранённые CSV
+│
+└── scripts/

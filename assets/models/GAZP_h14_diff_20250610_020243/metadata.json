@@ -1,0 +1,39 @@
+{
+    "model_name": "GAZP_h14_diff_20250610_020243",
+    "prediction_horizon": 14,
+    "time_steps": 30,
+    "features_input": [
+        "Close",
+        "Volume",
+        "SMA_20",
+        "SMA_50",
+        "BB_Middle_20",
+        "BB_Upper_20",
+        "BB_Lower_20",
+        "RSI_14"
+    ],
+    "target_feature_model": "Close_diff1",
+    "target_feature_original": "Close",
+    "used_differencing": true,
+    "differencing_column": "Close",
+    "differencing_order": 1,
+    "loss_function": "custom_weighted_mse",
+    "loss_weight_base": 1.15,
+    "training_epochs_run": 25,
+    "test_split_ratio_used": 0.1,
+    "early_stopping_monitor_config": "val_loss",
+    "early_stopping_monitor_actual": "val_loss",
+    "metrics_on_test_absolute_prices": {
+        "mae_avg": 7.859061716939067,
+        "rmse_avg": 11.114558949440449,
+        "mape_avg_custom": 5.770401119877578,
+        "mae_last": 11.664596845838759,
+        "rmse_last": 15.078315576937568,
+        "mape_last_custom": 8.537299335083677,
+        "keras_val_loss_target": 0.0006443262682296336,
+        "keras_val_mae_target": 0.018867822363972664,
+        "keras_val_mape_target": 2.9492387771606445,
+        "keras_val_mae_last_step_target": 0.018321847543120384,
+        "keras_val_mape_last_step_target": 2.8587534427642822
+    }
+}

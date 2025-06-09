@@ -1,0 +1,25 @@
+# .gitignore
+
+# Виртуальное окружение
+/venv/
+/.venv/
+/env/
+/.env/
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Файлы IDE (примеры для VSCode и PyCharm)
+.vscode/
+.idea/
+
+# Локальные файлы конфигурации
+.env
+*.env.*
+
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
